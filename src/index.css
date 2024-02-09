@@ -1,0 +1,184 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins, sans-serif;
+}
+.app{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+}
+.todos{
+  background-color: #282828;
+  width: 70%;
+  min-width: 320px;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.head,.delete,.edit{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.todos h1{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: rebeccapurple;
+  z-index: 10001;
+}
+.input{
+  padding: 0.1rem 1px 1rem;
+  display: flex;
+  gap: 3%;
+}
+input{
+  outline: none;
+  border: 3px solid transparent;
+  background-color: #464646;
+  color: #fff;
+  caret-color: rebeccapurple;
+  width: 85%;
+  font-size: 0.9rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+input:focus{
+  border-color: rebeccapurple;
+}
+/* .button{
+  padding: 5px 50px;
+  font-size: 16px;
+  background-color: rebeccapurple;
+  border: 3px solid rebeccapurple;
+  color: white;
+  border-radius: 10px;
+} */
+.comic-button {
+  display: inline-block;
+  padding: 5px 50px;
+  font: size 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: rebeccapurple;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: #fff;
+  color: rebeccapurple;
+  border: 2px solid rebeccapurple;
+  box-shadow: 5px 5px 0px rebeccapurple;
+}
+
+.comic-button:active {
+  background-color: #333539;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+
+
+.taskss{
+  overflow-y: scroll;
+  padding: 0px 10px 0px 0px;
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4e4e4e;
+  border-radius: 10px;
+}
+.task p{
+
+  color: #fff;
+}
+.btns{
+  display: flex;
+}
+.btns div{
+  /* padding: 5px 20px; */
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 5px;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.btns .edit button,.btns .delete button{
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}
+.btns .edit,.btns .edit button{
+  color:rgb(67, 43, 226) ;
+  border: 3px solid transparent;
+}
+.btns .edit:hover {
+  background-color: rgb(67, 43, 226);
+  color: #fff;
+}
+.btns .edit:hover button,.btns .delete:hover button{
+  color: #fff;
+  transition: 0.5s;
+}
+.btns .delete,.btns .delete button{
+  color:#ff004d ;
+  border: 3px solid transparent;
+}
+.btns .delete:hover{
+  background-color: #ff004d;
+  color: #fff;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333539; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rebeccapurple; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff004d; 
+}
+@media(max-width:550px){
+  .comic-button{
+    padding: 5px 30px;
+  }
+  .task{
+    flex-direction: column;
+  }
+}
+@media(max-width:450px){
+  .comic-button{
+    padding: 2px 20px;
+  }
+}
