@@ -33,8 +33,7 @@
   margin: 0;
   padding: 0;
   font-size: 20px;
-  color: rebeccapurple;
-  z-index: 10001;
+  color:#ebc22a;
 }
 .input{
   padding: 0.1rem 1px 1rem;
@@ -46,14 +45,14 @@ input{
   border: 3px solid transparent;
   background-color: #464646;
   color: #fff;
-  caret-color: rebeccapurple;
+  caret-color: #ebc22a;
   width: 85%;
   font-size: 0.9rem;
-  padding: 3px 10px;
+  padding: 10px;
   border-radius: 5px;
 }
 input:focus{
-  border-color: rebeccapurple;
+  border-color: #ebc22a;
 }
 /* .button{
   padding: 5px 50px;
@@ -71,7 +70,7 @@ input:focus{
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: rebeccapurple;
+  background-color: #ebc22a;
   border: 2px solid #000;
   border-radius: 10px;
   box-shadow: 5px 5px 0px #000;
@@ -81,9 +80,9 @@ input:focus{
 
 .comic-button:hover {
   background-color: #fff;
-  color: rebeccapurple;
-  border: 2px solid rebeccapurple;
-  box-shadow: 5px 5px 0px rebeccapurple;
+  color: #ebc22a;
+  border: 2px solid #ebc22a;
+  box-shadow: 5px 5px 0px #ebc22a;
 }
 
 .comic-button:active {
@@ -98,7 +97,7 @@ input:focus{
   overflow-y: scroll;
   padding: 0px 10px 0px 0px;
   display: flex;
-  height: 400px;
+  height: 400px; 
   flex-direction: column;
   gap: 10px;
 }
@@ -121,7 +120,7 @@ color: #fff;
   display: flex;
 }
 .btns div{
-  /* padding: 5px 20px; */
+  padding: 5px 10px;
   font-size: 16px;
   font-weight: 600;
   margin: 0px 5px;
@@ -129,29 +128,40 @@ color: #fff;
   outline: none;
   transition: 0.5s;
   border: 3px solid transparent;
-  background-color: white;
 }
-.btns .edit button,.btns .delete button{
-  background-color: transparent;
+.btns .edit,.btns .edit button {
+  background-color: rgb(67, 43, 226);
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   border: none;
   outline: none;
 }
-.btns .edit,.btns .edit button{
-  color:rgb(67, 43, 226) ;
-  border: 3px solid transparent;
+/* .btns div button{
+  color:#fff ;
+} */
+/* .btns .edit:hover{
+  background-color: #fff;
+  color: rgb(67, 43, 226);
 }
-.btns .edit:hover {
-  background-color: rgb(67, 43, 226);
-  color: #fff;
+.btns .edit:hover button{
+  background-color: #fff;
+  color: rgb(67, 43, 226);
+} */
+.btns .delete button{
+  background-color: #ff004d;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: none;
 }
 .btns .edit:hover button,.btns .delete:hover button{
   color: #fff;
   transition: 0.5s;
 }
 .btns .delete,.btns .delete button{
-  color:#ff004d ;
+  background-color:#ff004d ;
+  color: #fff;
   border: 3px solid transparent;
 }
 .btns .delete:hover{
@@ -170,7 +180,7 @@ color: #fff;
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rebeccapurple; 
+  background: #ebc22a; 
 }
 
 /* Handle on hover */
@@ -183,11 +193,14 @@ color: #fff;
   }
   .task{
     flex-direction: column;
+    align-items: start;
+    gap: 10px;
   }
   .p{
     width: 100%;
   }
   .p p{
+    margin: auto 10px;
     text-align: justify;
   }
 }

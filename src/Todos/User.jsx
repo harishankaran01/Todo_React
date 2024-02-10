@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useId } from 'react'
 import Display from './Display';
 import { RiCalendarTodoLine } from "react-icons/ri";
-
+import { nanoid } from 'nanoid';
 
 export default function User() {
     let [tasks, setTasks] = useState([]);
@@ -9,55 +9,44 @@ export default function User() {
     let [singleTask, setSingleTask] = useState("");
     let inputRef = useRef();
     useEffect(() => {
-        inputRef.current.focus();
+       setTasks( JSON.parse(localStorage.getItem("todos")) || []) 
+       inputRef.current.focus();
     }, [])
     function updateit() {
-        if(singleTask=== null || undefined||""){
+        if(singleTask == null ||singleTask ==  undefined||singleTask == ""){
             alert("Enter the task");
             return 0;
         }
-        console.log(singleTask);
-        if (iD == null) {
-            setTasks(prev => {
-                return [
-                    ...prev,
-                    {
-                        id: tasks.length + 1,
-                        task: singleTask
-                    }
-                ]
-            })
-        }
-        else {
-            setTasks(prev => {
-                return [
-                    ...prev,
-                    {
-                        id: iD,
-                        task: singleTask
-                    }
-                ]
-            })
-            setID(null);
-        }
+        setTasks(prev =>{
+           return[...prev,singleTask]
+        })
+       let update=[...tasks,singleTask];
+       console.log(update);
+       
+        localStorage.setItem("todos",JSON.stringify(update));
         setSingleTask("");
+        setID(null);
 
     }
-    function deleteTask(id) {
-        setTasks(prev => prev.filter(task => task.id != id));
+    function deleteTask(taskss) {
+        setTasks(prev => prev.filter(task => task != taskss));
+        let update=[...tasks];
+        let values=update.filter(value=> value!=taskss)
+        console.log(values);
+        localStorage.setItem("todos",JSON.stringify(values));
     }
-    function editTask(id, task) {
-        setID(id);
-        setSingleTask(task);
-        setTasks(prev => prev.filter(task => task.id != id));
+    function editTask(tasks) {
+        setID(tasks);
+        setSingleTask(tasks);
+        deleteTask(tasks)
         inputRef.current.focus();
     }
 
-    let displayTask = tasks.map(task => <Display task={task} deleteTask={deleteTask} editTask={editTask} key={task.id} />)
+    let displayTask = tasks.map(task => <Display task={task} deleteTask={deleteTask} editTask={editTask} key={nanoid()} />)
 
     return (
         <div className="todos">
-            <div className="head"><h1>To Do List </h1><RiCalendarTodoLine size={25} color='rebeccapurple'/></div>
+            <div className="head"><h1>To Do List </h1><RiCalendarTodoLine size={25} color='#ebc22a'/></div>
             
             <div className='input'>
                 <input ref={inputRef} type="text" value={singleTask} onChange={(e) => setSingleTask(e.target.value)} placeholder='Have you planned..?' />
